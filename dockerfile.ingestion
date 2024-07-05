@@ -1,0 +1,14 @@
+# Dockerfile.ingestion
+FROM python:3.8
+
+# Install any necessary dependencies
+RUN pip install requests
+
+# Copy the data ingestion script into the container
+COPY data_ingestion_script.py /app/data_ingestion_script.py
+
+# Set the working directory
+WORKDIR /app
+
+# Command to run the data ingestion script
+CMD ["python", "data_ingestion_script.py"]

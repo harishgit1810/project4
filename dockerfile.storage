@@ -1,0 +1,14 @@
+# Dockerfile.storage
+FROM python:3.8
+
+# Install any necessary dependencies
+RUN pip install requests
+
+# Copy the data storage script into the container
+COPY data_storage_script.py /app/data_storage_script.py
+
+# Set the working directory
+WORKDIR /app
+
+# Command to run the data storage script
+CMD ["python", "data_storage_script.py"]
